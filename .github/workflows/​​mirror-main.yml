@@ -1,0 +1,37 @@
+name: Mirror Main Branch to copyright-colango-human-language-theory
+ 
+on:
+  push:
+    branches:
+      - main # 关键：仅当 main 分支更新时触发
+ 
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout A SRC: copyright-colango-human-language-theory-docs-dev
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # 获取完整 Git 历史，确保镜像完整
+ 
+      - name: Configure Git User
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+ 
+      - name: Setup SSH Key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          # 添加 GitHub 到已知主机，避免首次连接确认提示
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          
+      - name: Push to Repository B Target: copyright-colango-human-language-theory
+        run: |
+          # 替换下面的 TARGET_OWNER 和 TARGET_REPO 为仓库 B 的实际拥有者和名称
+          git remote add target git@github.com:colating/copyright-colango-human-language-theory.git
+          
+          # 强制推送 main 分支到目标仓库的 main 分支
+          # --force 确保目标仓库与源仓库完全一致，覆盖任何差异
+          git push target main --force
