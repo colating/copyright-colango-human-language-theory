@@ -5,6 +5,9 @@ on:
     branches:
       - main # 关键：仅当 main 分支更新时触发
  
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  
 jobs:
   mirror:
     runs-on: ubuntu-latest
