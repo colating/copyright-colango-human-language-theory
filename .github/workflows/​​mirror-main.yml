@@ -35,3 +35,4 @@ jobs:
           # 强制推送 main 分支到目标仓库的 main 分支
           # --force 确保目标仓库与源仓库完全一致，覆盖任何差异
           git push target main --force
+          
