@@ -37,8 +37,8 @@ jobs:
 
       - name: Push to Remote
         run: |
-          git remote add target git@github.com:OWNER/REPO.git
-          git push target main --force
+          #git remote add target git@github.com:OWNER/REPO.git
+          #git push target main --force
 
           # 替换下面的 TARGET_OWNER 和 TARGET_REPO 为仓库 B 的实际拥有者和名称
           git remote add target git@github.com:colating/copyright-colango-human-language-theory.git
