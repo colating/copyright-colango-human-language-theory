@@ -12,24 +12,28 @@ jobs:
   mirror:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository A
+      - name: Checkout Repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0 # 获取完整 Git 历史，确保镜像完整
- 
-      - name: Configure Git User
+
+      - name: Setup SSH Known Hosts
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
- 
-      - name: Setup SSH Key
+          mkdir -p ~/.ssh
+          # 写入 GitHub 官方公钥条目到 known_hosts
+          echo "github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl" >> ~/.ssh/known_hosts
+          echo "github.com ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEmKSENjQEezOmxkZMy7opKgwFB9nkt5YRrYMjNuG5N87uRgg6CLrbo5wAdT/y6v0mKV0U2w0WZ2YB/++Tpockg=" >> ~/.ssh/known_hosts
+          echo "github.com ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCj7ndNxQowgcQnjshcLrqPEiiphnt+VTTvDP6mHBL9j1aNUkY4Ue1gvwnGLVlOhGeYrnZaMgRK6+PKCUXaDbC7qtbW8gIkhL7aGCsOr/C56SJMy/BCZfxd1nWzAOxSDPgVsmerOBYfNqltV9/hWCqBywINIR+5dIg6JTJ72pcEpEjcYgXkE2YEFXV1JHnsKgbLWNlhScqb2UmyRkQyytRLtL+38TGxkxCflmO+5Z8CSSTV7GlgOdoEDil3Jc+TrVnUPlY3cL6IX6UMXM3O8Pi2axVRkgrUcLCekedQjz0MPnz3Cwx6F97neUSTnZta7ka50PbfqiSNhSU5nJLuNEUF4Exp9ETSuixhP/s0cShF7svG0RZRhnhbpHPXua=" >> ~/.ssh/known_hosts
+          
+          # 设置正确的权限
+          chmod 644 ~/.ssh/known_hosts
+          chmod 700 ~/.ssh
+
+      - name: Configure SSH Key
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
-          # 添加 GitHub 到已知主机，避免首次连接确认提示
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
-      - name: Push to Repository B
+
+      - name: Push to Remote
         run: |
           # 替换下面的 TARGET_OWNER 和 TARGET_REPO 为仓库 B 的实际拥有者和名称
           git remote add target git@github.com:colating/copyright-colango-human-language-theory.git
