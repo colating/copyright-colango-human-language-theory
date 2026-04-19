@@ -31,6 +31,8 @@ jobs:
         run:
           # 替换下面的 TARGET_OWNER 和 TARGET_REPO 为仓库 B 的实际拥有者和名称
           git remote add target git@github.com:colating/copyright-colango-human-language-theory.git
+          ## 替换下面的 TARGET_OWNER 和 TARGET_REPO 为仓库 B 的实际拥有者和名称
+          #git remote add target git@github.com:TARGET_OWNER/TARGET_REPO.git
           
           # 强制推送 main 分支到目标仓库的 main 分支
           # --force 确保目标仓库与源仓库完全一致，覆盖任何差异
