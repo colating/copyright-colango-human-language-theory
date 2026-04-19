@@ -1,13 +1,15 @@
+---
+
 name: Mirror Main Branch to Repo B
- 
+
 on:
   push:
     branches:
-      - main # 关键：仅当 main 分支更新时触发
- 
+      - main  # 关键：仅当 main 分支更新时触发
+
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-  
+
 jobs:
   mirror:
     runs-on: ubuntu-latest
@@ -22,7 +24,7 @@ jobs:
           echo "github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl" >> ~/.ssh/known_hosts
           echo "github.com ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEmKSENjQEezOmxkZMy7opKgwFB9nkt5YRrYMjNuG5N87uRgg6CLrbo5wAdT/y6v0mKV0U2w0WZ2YB/++Tpockg=" >> ~/.ssh/known_hosts
           echo "github.com ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCj7ndNxQowgcQnjshcLrqPEiiphnt+VTTvDP6mHBL9j1aNUkY4Ue1gvwnGLVlOhGeYrnZaMgRK6+PKCUXaDbC7qtbW8gIkhL7aGCsOr/C56SJMy/BCZfxd1nWzAOxSDPgVsmerOBYfNqltV9/hWCqBywINIR+5dIg6JTJ72pcEpEjcYgXkE2YEFXV1JHnsKgbLWNlhScqb2UmyRkQyytRLtL+38TGxkxCflmO+5Z8CSSTV7GlgOdoEDil3Jc+TrVnUPlY3cL6IX6UMXM3O8Pi2axVRkgrUcLCekedQjz0MPnz3Cwx6F97neUSTnZta7ka50PbfqiSNhSU5nJLuNEUF4Exp9ETSuixhP/s0cShF7svG0RZRhnhbpHPXua=" >> ~/.ssh/known_hosts
-          
+
           # 设置正确的权限
           chmod 644 ~/.ssh/known_hosts
           chmod 700 ~/.ssh
@@ -35,11 +37,14 @@ jobs:
 
       - name: Push to Remote
         run: |
+          git remote add target git@github.com:OWNER/REPO.git
+          git push target main --force
+
           # 替换下面的 TARGET_OWNER 和 TARGET_REPO 为仓库 B 的实际拥有者和名称
           git remote add target git@github.com:colating/copyright-colango-human-language-theory.git
-          
+
           # 强制推送 main 分支到目标仓库的 main 分支
           # --force 确保目标仓库与源仓库完全一致，覆盖任何差异
           #git push target main --force
-          
+
           git push target +main:main
