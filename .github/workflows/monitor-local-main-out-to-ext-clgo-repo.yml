@@ -47,4 +47,4 @@ jobs:
           # --force 确保目标仓库与源仓库完全一致，覆盖任何差异
           #git push target main --force
 
-          git push target +main:main
+          git push target main:mirror_from-clgo_docs_dev-main --force
