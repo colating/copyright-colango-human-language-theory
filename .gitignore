@@ -2,8 +2,12 @@
 # Created by https://www.toptal.com/developers/gitignore/api/python,jupyternotebooks
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,jupyternotebooks
 
-### ONLY-ME ###
-ONLY-FOR-ME-*
+#### ONLY-ME ####
+DO-NOT-GIT*
+ONLY-FOR-ME*
+THIS-IS_GIT_DIR*
+docs/_build*
+docs/source/_build*
 
 ### JupyterNotebooks ###
 # gitignore template for Jupyter Notebooks

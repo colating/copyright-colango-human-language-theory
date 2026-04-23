@@ -1,0 +1,18 @@
+@font-face {
+	font-family: ColangoSans;
+	src: url(colango_fonts/ColangoSansWeb.woff2) format("woff2"),
+		url(colango_fonts/ColangoSansWeb.woff) format("woff"),
+		url(colango_fonts/ColangoSansWeb.ttf) format("truetype"),
+	font-weight: 400;
+	font-style: normal
+}
+
+/* 应用到正文 */
+body {
+    font-family: 'ColangoSans', 'Helvetica', 'Arial', sans-serif;
+}
+ 
+/* 应用到标题 */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'ColangoSans', 'Helvetica', 'Arial', sans-serif;
+}

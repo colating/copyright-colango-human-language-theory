@@ -1,0 +1,108 @@
+###### sphinx build
+
+
+#### 分支名称、action工作流文件的缩写
+# t == cltg
+# s == start
+# ------
+# tdev == cltgdev
+# tstart == cltgstart
+# tscross == cltgtartcross
+# tsopen == tsopenopen
+# thtml == cltghtml
+
+## IN copyleft-colating-general-human-language-docs-dev
+# tdev
+# tstart
+# cltgstart_cltgstartcross.yml
+# cltgstart_cltgstartopen.yml
+
+## IN copyleft-colating-general-human-language
+# tscross
+
+## IN colating.github.io
+# tsopen
+# thtml
+# cltgstartopen_cltghtml.yml
+#### =======================
+
+
+
+## 测试 OK
+# 但有警告; github官方 js版本警告
+# AI 说这个代码有安全漏洞
+ 
+#### 使用说明：
+## 1. 私有仓库 source cltg_docs_dev 的 dev分支，不对外开放：只 作为开发用途。
+## 2. 当需要发布时，将私有仓库的 dev分支，@人工手动@ ：push 到该仓库的 main分支。
+## 3. Action A type 工作流文件运行在 source cltg_docs_dev私有仓库环境：
+# 当私有仓库 source cltg_docs_dev 的 main分支有 push 信号时，
+# 将本地 main分支的全部文件，push 到远程公有仓库  copyleft-colating-general-human-language 
+# 的 mirror_from-cltg_docs_dev-main 分支。
+## 4. 当公有仓库的mirror_from-cltg_docs_dev-main 分支有 push 信号时，产生 Webhooks 信号给 RTD。
+## 5. 公有仓库  copyleft-colating-general-human-language 的main分支，可以保留作为自由发挥。
+
+
+name: Deploy sphinx build in colating.github.io
+
+on:
+  # 当主分支或开发分支有推送时触发
+  push:
+    branches: [ tsopen ]
+  ## 允许手动触发
+  #workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # 需要写入内容权限
+      pages: write     # 需要操作 Pages 权限
+      id-token: write  # 需要生成 ID Token
+    steps:
+      # 步骤 1: 检出代码
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 确保获取完整的提交历史
+
+      # 步骤 2: 设置 Python 环境
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      # 步骤 3: 安装依赖
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install sphinx sphinx-rtd-theme sphinx-autodoc-typehints sphinx-copybutton
+          pip install myst-parser jieba sphinxcontrib-jquery
+          pip install sphinx-wagtail-theme
+          pip install furo pydata_sphinx_theme sphinx-book-theme
+
+      # 步骤 4: 生成 HTML 文档
+      - name: Build HTML documentation
+        run: |
+         #### cd python/docs
+          cd docs
+          make html
+          #sphinx-build -b html ./source ./build
+          
+      # 步骤 5: 部署到 GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          #### 文档源目录
+          publish_dir: ./docs/build/html
+          # 提交信息
+          commit_message: "Deploy Sphinx docs for ${{ github.sha }}"
+          # 个人访问令牌（如果需要）
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # 推送的分支
+          publish_branch: main
+          #publish_branch: thtml
+
+

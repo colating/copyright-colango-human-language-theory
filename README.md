@@ -1,2 +1,2 @@
-# copyright-colango-human-language-theory-docs-dev
-colango dev
+# copyleft-colating-general-human-language-docs-dev
+colating DEV :
