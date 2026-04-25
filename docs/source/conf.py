@@ -60,7 +60,7 @@ html_static_path = ["_static"]
 ## https://docs.readthedocs.io/en/stable/guides/adding-custom-css.html?highlight=font#adding-custom-css-or-javascript-to-sphinx-documentation
 ## font ng doing....
 #html_style = 'css/clgo-theme.css'
-html_css_files = ['css/colango_custom.css']
+html_css_files = ['css/clgo_sphinx_rtd_theme.css']
 
 # -- Options for HTML output
 

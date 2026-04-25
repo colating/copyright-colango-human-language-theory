@@ -38,8 +38,3 @@ h2 {
 pre, code {
    font-family: 'ColangoSans'; !important;
 }
-
-/* 关闭版本显示 */
-.rst-versions {
-    display: none !important;
-}

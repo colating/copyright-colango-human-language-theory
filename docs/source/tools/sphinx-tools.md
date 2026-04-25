@@ -1,5 +1,4 @@
-# Markdown md
-
+# sphinx usage
 ## MyST
 
 The MyST Syntax Guide https://myst-parser.readthedocs.io/en/v0.15.1/syntax/syntax.html 
