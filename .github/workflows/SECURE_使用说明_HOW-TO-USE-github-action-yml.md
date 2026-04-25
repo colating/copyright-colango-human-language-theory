@@ -1,6 +1,8 @@
 ###### sphinx build
 
 
+VER 001.0
+
 #### 分支名称、action工作流文件的缩写
 
 - t == cltg
@@ -34,14 +36,13 @@
 - thtml
 - cltgstartopen_cltghtml.yml  # rm .github/workflows/* << In this yml file
 
-# B. Colango 私有仓库
+# B. Colango 私有仓库 *****************
 
 ## 1. IN copyright-colango-docs-dev
 
 - gdev
 - gstart
 - clgostart_clgostartcross.yml
-- clgostart_clgostartopen.yml
 
 ## 2. IN copyright-colango-general-human-language
 
