@@ -1,8 +1,0 @@
-@font-face {
-	font-family: ColangoSans;
-	src: url(colango_fonts/ColangoSansWeb.woff2) format("woff2"),
-		url(colango_fonts/ColangoSansWeb.woff) format("woff"),
-		url(colango_fonts/ColangoSansWeb.ttf) format("truetype"),
-	font-weight: 400;
-	font-style: normal
-}

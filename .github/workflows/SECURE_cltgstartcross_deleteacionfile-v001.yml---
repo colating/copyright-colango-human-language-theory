@@ -1,3 +1,4 @@
+###### sphinx build
 
 
 #### 分支名称、action工作流文件的缩写
@@ -26,6 +27,7 @@
 #### =======================
 
 
+
 ## 测试 OK
 # 但有警告; github官方 js版本警告
 # AI 说这个代码有安全漏洞
@@ -41,41 +43,33 @@
 ## 5. 公有仓库  copyleft-colating-general-human-language 的main分支，可以保留作为自由发挥。
 
 
-name: Mirror main mirror_from-cltg_docs_dev-main and push to pubblic repo
- 
+name: Deploy sphinx build in colating.github.io
+
 on:
+  # 当主分支或开发分支有推送时触发
   push:
-    branches:
-      - tstart  # 关键：仅当 main 分支更新时触发
- 
+    branches: [ tscross ]
+  ## 允许手动触发
+  #workflow_dispatch:
+
 jobs:
-  mirror:
+  build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # 需要写入内容权限
+      pages: write     # 需要操作 Pages 权限
+      id-token: write  # 需要生成 ID Token
     steps:
-      - name: Checkout Repository A main mirror_from-cltg_docs_dev
+      # 步骤 1: 检出代码
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # 获取完整 Git 历史，确保镜像完整
- 
-      - name: Configure Git User
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
- 
-      - name: Setup SSH Key
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY_WEB }}" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
-          # 添加 GitHub 到已知主机，避免首次连接确认提示
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
-          
-      - name: Push to Repository B to pubblic
-        run: |
-          # 替换下面的 TARGET_OWNER 和 TARGET_REPO 为仓库 B 的实际拥有者和名称
-           git remote add target git@github.com:colating/colating.github.io.git
-          
-          # 强制推送 main 分支到目标仓库的 main 分支
-          # --force 确保目标仓库与源仓库完全一致，覆盖任何差异
-          git push target tstart:tsopen --force
+          fetch-depth: 0  # 确保获取完整的提交历史
 
+      # 步骤 4: delete action yml file
+      - name: delete action yml file
+        run: |
+         #### cd python/docs
+          # delete action yml file
+          cd ~
+          rm -rf .github

@@ -1,4 +1,30 @@
-#### clgo
+
+
+#### 分支名称、action工作流文件的缩写
+# t == cltg
+# s == start
+# ------
+# tdev == cltgdev
+# tstart == cltgstart
+# tscross == cltgtartcross
+# tsopen == tsopenopen
+# thtml == cltghtml
+
+## IN copyleft-colating-general-human-language-docs-dev
+# tdev
+# tstart
+# cltgstart_cltgstartcross.yml
+# cltgstart_cltgstartopen.yml
+
+## IN copyleft-colating-general-human-language
+# tscross
+
+## IN colating.github.io
+# tsopen
+# thtml
+# cltgstartopen_cltghtml.yml
+#### =======================
+
 
 ## 测试 OK
 # 但有警告; github官方 js版本警告
@@ -20,7 +46,7 @@ name: Mirror main mirror_from-cltg_docs_dev-main and push to pubblic repo
 on:
   push:
     branches:
-      - main  # 关键：仅当 main 分支更新时触发
+      - tstart  # 关键：仅当 main 分支更新时触发
  
 jobs:
   mirror:
@@ -39,20 +65,24 @@ jobs:
       - name: Setup SSH Key
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          echo "${{ secrets.SSH_PRIVATE_KEY_WEB }}" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
           # 添加 GitHub 到已知主机，避免首次连接确认提示
           ssh-keyscan github.com >> ~/.ssh/known_hosts
           
       - name: Push to Repository B to pubblic
         run: |
-          # 替换下面的 TARGET_OWNER 和 TARGET_REPO 为仓库 B 的实际拥有者和名称
-           git remote add target git@github.com:colating/copyright-colango-human-language-theory.git
-
-          # 替换下面的 TARGET_OWNER 和 TARGET_REPO 为仓库 B 的实际拥有者和名称
-           
+          # 替换下面的 TARGET_OWNER 和 TARGET_REPO 为仓库 B 的实际拥有者和名称  
+          git remote add target git@github.com:colating/colating.github.io.git
+          
+          ##
+          # git update-index --skip-worktree .github/  ## NG ?
+          git rm --cached -rf .github/workflows/SECURE*
+          git commit -m "Remove workflows/SEC"
+          
+          ##
           # 强制推送 main 分支到目标仓库的 main 分支
           # --force 确保目标仓库与源仓库完全一致，覆盖任何差异
-          #git push target main --force
+          git push target tstart:tsopen --force
+          
 
-          git push target main:mirror_from-clgo_docs_dev-main --force

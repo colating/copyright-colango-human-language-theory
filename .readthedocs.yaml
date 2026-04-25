@@ -1,5 +1,8 @@
 version: "2"
 
+# ubuntu 22.04 最高只支持 sphinx 4.01 ？24.04 支持 sphinx 5.0+
+# 有些其他依赖。同样存在这种版本的限制。
+
 build:
   os: "ubuntu-22.04"
   tools:

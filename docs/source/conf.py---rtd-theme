@@ -2,16 +2,12 @@
 
 # -- Project information
 
-project = 'Colango Human Language Theory'
-copyleft = '2026, David'
+project = 'Colating General Human Language'
+copyleft = '2021, David'
 author = 'David'
 
 release = '0.1'
 version = '0.1.0'
-
-####
-# The copyright holder and year(s)
-copyright = '>2K~2026, Colango'
 
 # -- General configuration
 
@@ -22,7 +18,6 @@ extensions = [
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
     "myst_parser",
-    'sphinx.ext.intersphinx' 
 ]
 
 ##"myst_parser",
@@ -36,9 +31,7 @@ extensions = [
 #}
 source_suffix = {
     '.md': 'markdown',
-    '.rst': 'restructuredtext',
 }
-
 
 intersphinx_mapping = {
 #    'python': ('https://docs.python.org/3/', None),
@@ -67,20 +60,19 @@ html_css_files = ['css/colango_custom.css']
 html_theme = 'sphinx_rtd_theme'
 #html_theme = "pydata_sphinx_theme"
 #html_theme = "sphinx_book_theme"
-####
-# 在 conf.py 中添加或修改。关闭显示默认的“View page source ” 显示
-html_show_sourcelink = False
 
-#html_theme_options = {
+html_theme_options = {
 #### https://sphinx-book-theme.readthedocs.io/en/stable/tutorials/get-started.html
 #    ...
 #    "repository_url": "https://github.com/{your-docs-url}",
 #    "use_repository_button": True,
 #    ...
+
+
     ## pydate
 ##    "use_download_button": False,
-#}
 
+}
 
 html_title = "Colating Language"
 
