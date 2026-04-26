@@ -52,7 +52,7 @@ jobs:
   mirror:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository A copyright-colango-human-language-theory-docs-dev
+      - name: Checkout REMOTE REPO copyright-colango-theory In LOCAL REPO copyright-clgo-theory-docs-dev
         uses: actions/checkout@v4
         with:
           fetch-depth: 0 # 获取完整 Git 历史，确保镜像完整
@@ -65,12 +65,12 @@ jobs:
       - name: Setup SSH Key
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          echo "${{ secrets.SSH_PRIVATE_KEY_IN_CLGO_DEV }}" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
           # 添加 GitHub 到已知主机，避免首次连接确认提示
           ssh-keyscan github.com >> ~/.ssh/known_hosts
           
-      - name: Push to Repository B to pubblic
+      - name: Push to REMOTE REPO copyright-colango-theory to pubblic
         run: |
           # 替换下面的 TARGET_OWNER 和 TARGET_REPO 为仓库 B 的实际拥有者和名称
           git remote add target git@github.com:colating/copyright-colango-human-language-theory.git
