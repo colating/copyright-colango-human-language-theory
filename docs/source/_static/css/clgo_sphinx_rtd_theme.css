@@ -42,3 +42,12 @@ h1, h2, h3, h4, h5, h6 {
     display: none !important;
 }
 */
+
+/* 针对所有代码块增加字体大小 */
+/*pre, code, div.highlight pre {
+    font-size: 1.2em !important;
+}
+*/
+pre, code, div.highlight pre {
+    font-size: 100% !important;
+}

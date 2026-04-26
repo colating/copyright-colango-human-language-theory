@@ -1,3 +1,4 @@
+#### github action官方示例：Get started with GitHub Actions  https://docs.github.com/en/actions/get-started/quickstart 
 
 
 #### 分支名称、action工作流文件的缩写
@@ -47,7 +48,15 @@ on:
   push:
     branches:
       - gstart  # 关键：仅当 main 分支更新时触发
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
  
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+
 jobs:
   mirror:
     runs-on: ubuntu-latest
@@ -77,8 +86,8 @@ jobs:
           
           ##
           # git update-index --skip-worktree .github/  ## NG ?
-          #git rm --cached -rf .github
-          #git commit -m "Remove .github workflows all"
+          git rm --cached -rf .github
+          git commit -m "Remove .github workflows all"
           
           # 强制推送 main 分支到目标仓库的 main 分支
           # --force 确保目标仓库与源仓库完全一致，覆盖任何差异
