@@ -1,17 +1,18 @@
-# index tool
+# 相关工具
 
-mmnnnn
-   :hidden:
-   
-   
+<!-- :hidden: -->
+<!-- :caption: Tools List -->
+
 ```{eval-rst}
 
 .. toctree::
    :glob:
    :maxdepth: 2
-   :caption: Tools
 
+   editor/*
+   extensions/*
    md/*
+   sphinx/*
 ```
 
 

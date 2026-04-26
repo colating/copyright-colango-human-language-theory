@@ -26,3 +26,21 @@
 ```
 
 [tmp-test](tmp-test)
+
+
+```{eval-rst}
+.. todo::
+   :class: danger
+   
+   【高优先级】修复核心崩溃问题
+
+.. todo::
+   :class: warning
+   
+   【中优先级】优化加载速度
+
+.. todo::
+   :class: note
+   
+   【低优先级】更新文档拼写错误
+```
