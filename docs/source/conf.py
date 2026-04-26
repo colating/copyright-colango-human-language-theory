@@ -16,13 +16,16 @@ copyright = '>2K~2026, Colango'
 # -- General configuration
 
 extensions = [
+    'sphinx.ext.todo',
     'sphinx.ext.duration',
     'sphinx.ext.doctest',
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
+    'sphinx.ext.intersphinx',
+
     "myst_parser",
-    'sphinx.ext.intersphinx' 
+    
 ]
 
 ##"myst_parser",
@@ -87,6 +90,8 @@ html_title = "Colating Language"
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
 
-
-
+####
+todo_include_todos = True
+todo_emit_warnings = True
+## todo_link_only True: .. todolist:: 生成的列表仅包含链接，不包含文件路径和行号。
 
