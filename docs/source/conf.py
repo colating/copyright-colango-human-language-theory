@@ -94,3 +94,24 @@ todo_include_todos = True
 todo_emit_warnings = True
 ## todo_link_only True: .. todolist:: 生成的列表仅包含链接，不包含文件路径和行号。
 
+myst_enable_extensions = [
+    # 用于解析美元$和$$封装的数学和LaTeX 数学公式解析
+    "dollarmath","amsmath",
+    # 定义列表
+    "deflist",
+    # 冒号的代码围栏
+    "colon_fence",
+    # HTML 警告
+    "html_admonition",
+    # HTML 图像
+    "html_image",
+    # 智能引号与替换件
+    "smartquotes","replacements",
+    # 链接
+    "linkify",
+    # 替换
+    "substitution",
+    # 任务列表
+    "tasklist"
+]
+
