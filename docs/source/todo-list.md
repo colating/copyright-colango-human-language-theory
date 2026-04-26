@@ -1,6 +1,6 @@
 # 待办事项列表
 
-## 总结
+## todo 插件使用方法总结
 
 1. 在 conf.py 中添加 'sphinx.ext.todo' 到 extensions。
 2. 设置 todo_include_todos = True 以在输出中显示 TODO。
@@ -16,7 +16,7 @@
 
 ```bash
     sphinx-build -b html -D todo_include_todos=0 source build/html
-
+```
 
 
 ```{eval-rst}
