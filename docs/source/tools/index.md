@@ -13,6 +13,7 @@
    extensions/*
    md/*
    sphinx/*
+   linux/*
 ```
 
 
