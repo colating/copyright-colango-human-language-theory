@@ -3,3 +3,4 @@ sphinx_rtd_theme
 sphinxcontrib-mermaid
 linkify-it-py
 jieba
+sphinxcontrib-bibtex

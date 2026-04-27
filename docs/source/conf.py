@@ -24,10 +24,12 @@ extensions = [
     'sphinx.ext.intersphinx',
     "myst_parser",
     'sphinxcontrib.mermaid',
+    'sphinxcontrib.bibtex',
     
 ]
 
 ##"myst_parser",
+bibtex_bibfiles = ['refs.bib']
 
 
 # 指定支持的源文件后缀
