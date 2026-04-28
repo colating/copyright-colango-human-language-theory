@@ -38,3 +38,21 @@ h2 {
 pre, code {
    font-family: 'ColangoSans'; !important;
 }
+
+/* 关闭版本显示 */
+.rst-versions {
+    display: none !important;
+}
+
+
+/* source/_static/custom.css */
+blockquote {
+    font-size: 12px; /* 将引用块字体设置为18像素 */
+    line-height: 1.6; /* 1.6 */
+    border-left: 0px solid #ccc; /* 4，左侧灰色边框 */
+    margin: 1.5em 2px;  /* 1.5em 10px  外框：上下‌外边距 [px​​：‌左右‌外边距] */ 
+    padding: 0em 10px;  /* 0.5em 10px 框内：上下‌内边距 [px​​：‌左右‌内边距] */
+    background-color: #f9f9f9; /* 浅灰色背景 */
+    color: #555;
+}
+
