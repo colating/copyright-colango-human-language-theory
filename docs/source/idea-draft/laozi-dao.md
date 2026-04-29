@@ -65,6 +65,8 @@ A-->B
 
 ```
 %%{init: { "theme": "forest" }}%%
+
+
 ```
 
 ```{mermaid}
@@ -84,26 +86,23 @@ title: "概念对象 -- 概念对象 -- 概念标记号"
 }}%%
 
 graph LR
-
-  
-B[映像概念 C] --> A1[(概念对象 1)]
-C[映像概念 B] --> A1
+B[映像概念 C] ==> A1[(概念对象 1)]
+C[映像概念 B] ==> A1
 D[映像概念 A] --> A1
   subgraph 映像概念
   B
   C
   D
   end
-  
-B --> A2[(概念对象 2)]
+B ==> A2[(概念对象 2)]
   subgraph 概念对象
   A1
   A2
   end
 BB1(概念标记号 C3) --> B
 BB2(概念标记号 C2) --> B
-BB3(概念标记号 C1) --> B
-BB3(概念标记号 C1) --> C
+BB3(概念标记号 C1) ==> B
+BB3(概念标记号 C1) ==> C
   subgraph 概念标记号_yu2
   BB1
   BB2
@@ -119,8 +118,6 @@ DD1(概念标记号XX) --> D
   subgraph 概念标记号X
   DD1
   end 
-
- 
 ```
 
 
