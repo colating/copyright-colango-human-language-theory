@@ -7,6 +7,40 @@ For sphinx
 [引用和交叉引用](https://daobook.github.io/jupyter-book-zh/content/references.html)
 
 
+######## ==============================
+
+a line % a comment
+another line
+
+
+{.glossary}
+my term
+: Definition of the term
+
+{term}`my term`
+
+{.bg-primary}
+Here is a paragraph with a class to control its formatting.
+
+**strong**, _emphasis_, `literal text`, \*escaped symbols\*
+
+:::bg-primary
+This is a container with a custom CSS class.
+
+- It can contain multiple blocks
+:::
+
+{bg-primary} `bg-primary: contain single blocks`
+
+{tip} `tip: contain single blocks`
+
+:::{tip}
+Let's give readers a helpful hint!
+:::
+
+######## ==============================
+
+
 ## 安装
 
 ### 1. 启用扩展
