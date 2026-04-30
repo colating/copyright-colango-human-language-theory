@@ -56,6 +56,52 @@ COPYRIGHT    @ v2604-0.001-4
 因为人类智慧无法对其永不可知的东西来进行推演。这个概念是从人类智慧的能力极限的角度来定义的，而不是像“牛羊、树木、云夺 、梦境”等等的这类人类能够感受得到的概念对象来定义。
 “恒道”：在Colango语文智慧理论中，这个概念被视为是一个有缺陷的概念。具体参见人类智慧能力座标系有关章节的论述。
 
+```{mermaid}
+
+---
+config:
+  themeVariables:
+    'fontSize': 30
+---
+flowchart LR
+    A ~~> B
+
+```
+
+
+```{mermaid} 
+
+---
+title: "CLGO Coor ity"
+---
+
+---
+config:
+  radar:
+    axisScaleFactor: 0.8
+    curveTension: 0.5
+  theme: base
+  themeVariables:
+    fontSize: '30'
+
+---
+
+ 
+radar-beta
+  axis A, B, C, D, E
+  curve c1{1,2,0,0,5}
+  curve c2{5,4,3,2,1}
+  curve c3{3,3,3,3,3}
+
+
+```
+
+
+
+
+# ==========================================
+======================================
+
 ```
 %%{init: { 'logLevel': 'debug', 'theme': 'dark' } }%%
 graph LR
@@ -119,7 +165,6 @@ DD1(概念标记号XX) --> D
   DD1
   end 
 ```
-
 
 
 

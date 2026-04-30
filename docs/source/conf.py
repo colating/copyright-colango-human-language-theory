@@ -117,3 +117,6 @@ myst_enable_extensions = [
     "tasklist"
 ]
 
+# 3. 关键配置：将 markdown 中的 mermaid 代码块映射为 sphinx 指令
+# 这样 ```{mermaid} ... ``` 就会被当作 .. mermaid:: 处理
+myst_fence_as_directive = ["mermaid"]
