@@ -122,6 +122,8 @@ subgraph 概念对象
 
 ### 4. 人类智慧的层次
 
+** CLGO Coordinate System of Human Intelligence Capability **
+
 ```{mermaid}
 
 ---
@@ -169,9 +171,9 @@ flowchart BT
 
 
 
-### 4. 概念对象
+### 4. 概念对象的种类
 
- title: "CLGO Coordinate System of Human Intelligence Capability"
+
 
 ```{mermaid}
 
