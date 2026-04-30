@@ -117,6 +117,20 @@ myst_enable_extensions = [
     "tasklist"
 ]
 
-# 3. 关键配置：将 markdown 中的 mermaid 代码块映射为 sphinx 指令
-# 这样 ```{mermaid} ... ``` 就会被当作 .. mermaid:: 处理
-myst_fence_as_directive = ["mermaid"]
+# conf.py
+mermaid_params = ['--theme', 'default'] # 如果使用命令行工具生成图片，此方法无效，需看方法二
+
+# 如果是前端渲染，可以在 html_context 或 extra_head 中注入脚本
+html_context = {
+    'extra_head': '''
+    <script>
+    mermaid.initialize({
+        startOnLoad: true,
+        themeVariables: {
+            fontSize: '6px',
+        }
+    });
+    </script>
+    '''
+}
+

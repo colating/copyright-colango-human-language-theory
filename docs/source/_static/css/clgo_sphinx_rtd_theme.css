@@ -67,3 +67,24 @@ blockquote {
     color: #555;  /* color: #555; */
 }
 
+
+
+/* _static/custom.css */
+
+/* 针对所有 Mermaid 图表中的文本元素 */
+.mermaid text {
+    font-size: 18px !important;
+}
+
+/* 如果需要更精细的控制，可以针对特定类 */
+.mermaid .node text {
+    font-size: 24px !important;
+}
+
+.mermaid .edgeLabel text {
+    font-size: 24px !important;
+}
+ 
+.mermaid .labelFontSize text {
+    font-size: 24px !important;
+}

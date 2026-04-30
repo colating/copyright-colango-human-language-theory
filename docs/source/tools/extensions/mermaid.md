@@ -1,5 +1,6 @@
 # Mermaid ：Directive Examples 
 
+https://forum.obsidian.md/t/changing-for-the-font-size-for-a-mermaid-diagram/23650
 
 ## ```{mermaid} 后需要一个空行
 

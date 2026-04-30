@@ -56,45 +56,39 @@ COPYRIGHT    @ v2604-0.001-4
 因为人类智慧无法对其永不可知的东西来进行推演。这个概念是从人类智慧的能力极限的角度来定义的，而不是像“牛羊、树木、云夺 、梦境”等等的这类人类能够感受得到的概念对象来定义。
 “恒道”：在Colango语文智慧理论中，这个概念被视为是一个有缺陷的概念。具体参见人类智慧能力座标系有关章节的论述。
 
-```{mermaid}
 
----
-config:
-  themeVariables:
-    'fontSize': 30
----
-flowchart LR
-    A ~~> B
+<style>
+   font-family: '宋体', SimSun, sans-serif;
+   font-size: 12px;
+</style>
+
+
+
+
+```{eval-rst}
+
+
+.. mermaid::
+
+
+
+   graph TB
+     A --- B & C
+     B --- D & E
+     C --- F & G
+     D -- left --- H
+     D -- right --- J
+     E -- left --- K
+     E -- right --- L
+     F -- left --- M
+     F -- right --- N
+     G -- left --- O
+     G -- right --- P
 
 ```
-
-
-```{mermaid} 
-
----
-title: "CLGO Coor ity"
----
-
----
-config:
-  radar:
-    axisScaleFactor: 0.8
-    curveTension: 0.5
-  theme: base
-  themeVariables:
-    fontSize: '30'
-
----
-
  
-radar-beta
-  axis A, B, C, D, E
-  curve c1{1,2,0,0,5}
-  curve c2{5,4,3,2,1}
-  curve c3{3,3,3,3,3}
 
 
-```
 
 
 
@@ -109,20 +103,12 @@ A-->B
 
 ```
 
+
+
+
 ```
 %%{init: { "theme": "forest" }}%%
 
-
-```
-
-```{mermaid}
-
----
-title: "概念对象 -- 概念对象 -- 概念标记号"
----
-
-%%{init: { "theme": "forest" }}%%
- 
 %%{init: {
   'theme':'forest', 
   'themeVariables': 
@@ -131,39 +117,62 @@ title: "概念对象 -- 概念对象 -- 概念标记号"
     }
 }}%%
 
+```
+
+```{mermaid}
+
+
+
+---
+title: "概念对象 -- 概念映像 -- 概念标记号"
+text: '32px'
+---
+
+
+ %%{init: {
+  'theme':'forest', 
+  'themeVariables': 
+    {  
+      'fontSize': '50px', 
+    }
+}}%%
+
+
 graph LR
-B[映像概念 C] ==> A1[(概念对象 1)]
-C[映像概念 B] ==> A1
-D[映像概念 A] --> A1
+  B1(概念映像 2) ==> CA1
+  B1 ==> CA2
+  B1 ==> CA3
+  B3 ==> CB2 
+  B3(概念映像 1) ==> CB1 
+subgraph 概念对象
+  A1[(永不可知概念对象)]
+  A11[(未来概念对象)]
+  A2[(遗忘概念对象)]
+  A3[(概念对象 2)]
+  A4[(概念对象 1)]
+  end
+  subgraph 概念标记号_语种 2
+  CA1(概念标记号 1)
+  CA2(概念标记号 2)
+  CA3(概念标记号 3)
+  end
+  subgraph 概念标记号_语种 1
+  CB1(概念标记号 1)
+  end
+  subgraph 概念标记号_遗忘
+  CB2((遗忘概念标记号))
+  end
+  A3 ==> B1
+  A2 -.- B2
+  A4 ==> B3
+  A3 ==> B3
   subgraph 映像概念
-  B
-  C
-  D
+  B1
+  B2((遗忘概念映像))
+  B3
   end
-B ==> A2[(概念对象 2)]
-  subgraph 概念对象
-  A1
-  A2
-  end
-BB1(概念标记号 C3) --> B
-BB2(概念标记号 C2) --> B
-BB3(概念标记号 C1) ==> B
-BB3(概念标记号 C1) ==> C
-  subgraph 概念标记号_yu2
-  BB1
-  BB2
-  BB3
-  end 
-CC1(概念标记号 B2) --> C
-CC2(概念标记号 B1) --> C
-  subgraph 概念标记号_yuz1
-  CC1
-  CC2
-  end 
-DD1(概念标记号XX) --> D
-  subgraph 概念标记号X
-  DD1
-  end 
+ 
+ 
 ```
 
 
@@ -172,12 +181,12 @@ DD1(概念标记号XX) --> D
 
 ### 4. 人类智慧能力座标系
 
- 
+ title: "CLGO Coordinate System of Human Intelligence Capability"
 
 ```{mermaid}
 
 ---
-title: "CLGO Coordinate System of Human Intelligence Capability"
+title: "概念对象的类型"
 ---
 
 %%{init: {
