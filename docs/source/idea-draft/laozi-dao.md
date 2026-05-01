@@ -76,7 +76,7 @@ graph LR
   B3(概念映像 1) ==> CB2 
   B3 ==> CB1
   A3 ==> B1
-subgraph 已知概念对象
+subgraph 已知型概念对象
     A3[(概念对象 2<br/>思想/本能)]
     A4[(概念对象 1)]
   end
@@ -111,7 +111,7 @@ fullscreen: mermaid_fullscreen
 ---
 graph LR
 
-subgraph 概念对象
+subgraph 非知型概念对象
     A1[(永不可知概念对象)]
     A11[(未来概念对象)]
     A2[(遗忘概念对象)]
@@ -182,7 +182,7 @@ flowchart BT
     **永**（道）`"]
     cj["`超越绝对智慧
        （**永不可知概念对象**）
-       永恒：为人类智慧提供指引）
+       永恒：为人类智慧提供指引
     **恒**（恒道）`"]
     wq --> jd --> cj
     
