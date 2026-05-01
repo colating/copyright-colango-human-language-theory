@@ -32,6 +32,7 @@ extensions = [
 bibtex_bibfiles = ['refs.bib']
 
 
+
 # 指定支持的源文件后缀
 #source_suffix = {
 #    '.rst': 'restructuredtext',
@@ -117,20 +118,19 @@ myst_enable_extensions = [
     "tasklist"
 ]
 
-# conf.py
-mermaid_params = ['--theme', 'default'] # 如果使用命令行工具生成图片，此方法无效，需看方法二
 
-# 如果是前端渲染，可以在 html_context 或 extra_head 中注入脚本
-html_context = {
-    'extra_head': '''
-    <script>
-    mermaid.initialize({
-        startOnLoad: true,
-        themeVariables: {
-            fontSize: '6px',
-        }
-    });
-    </script>
-    '''
-}
+# conf.py
+
+extensions = [
+    'myst_parser',
+    'sphinxcontrib.mermaid',
+]
+
+## 确保 MyST 将 mermaid 代码块视为指令
+myst_fence_as_directive = ["mermaid"]
+
+# html_static_path = ['_static']
+
+#def setup(app):
+#    app.add_js_file('mermaid-config.js')
 

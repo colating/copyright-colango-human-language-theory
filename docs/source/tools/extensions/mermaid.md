@@ -18,6 +18,39 @@ flowchart
 ```
 
 
+https://mermaid.ai/open-source/syntax/block.html
+block
+  columns 3
+  Frontend blockArrowId6<[" "]>(right) Backend
+  space:2 down<[" "]>(down)
+  Disk left<[" "]>(left) Database[("Database")]
+
+  classDef front fill:#696,stroke:#333;
+  classDef back fill:#969,stroke:#333;
+  class Frontend front
+  class Backend,Database back
+
+
+
+
+block
+columns 1
+  db(("DB"))
+  blockArrowId6<["&nbsp;&nbsp;&nbsp;"]>(down)
+  block:ID
+    A
+    B["A wide one in the middle"]
+    C
+  end
+  space
+  D
+  ID --> D
+  C --> D
+  style B fill:#939,stroke:#333,stroke-width:4px
+
+
+
+
 ## venn 维恩:交集图形
 
 ## treemap-beta
