@@ -76,7 +76,7 @@ graph LR
   B3(概念映像 1) ==> CB2 
   B3 ==> CB1
   A3 ==> B1
-subgraph 概念对象
+subgraph 已知概念对象
     A3[(概念对象 2<br/>思想/本能)]
     A4[(概念对象 1)]
   end
@@ -106,7 +106,7 @@ subgraph 概念对象
 ```{mermaid}
 
 ---
-title: 座标系型："概念对象 -- 概念映像 -- 概念标记号"
+title: 非知型："概念对象 -- 概念映像 -- 概念标记号"
 fullscreen: mermaid_fullscreen
 ---
 graph LR
