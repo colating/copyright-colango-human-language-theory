@@ -112,12 +112,12 @@ subgraph 已知型概念对象
 ```{mermaid}
 
 ---
-title: 非知型："概念对象 -- 概念映像 -- 概念标记号"
+title: 非知/新知型："概念对象 -- 概念映像 -- 概念标记号"
 fullscreen: mermaid_fullscreen
 ---
 graph LR
 
-subgraph 非知型概念对象
+subgraph 非知/新知型概念对象
     A1[(永不可知概念对象)]
     A11[(绝对概念对象)]
     A12[(未来概念对象<br/>前沿感念对象)]
