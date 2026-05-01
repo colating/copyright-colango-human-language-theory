@@ -114,18 +114,25 @@ graph LR
 subgraph 非知型概念对象
     A1[(永不可知概念对象)]
     A11[(绝对概念对象)]
-    A12[(未来概念对象)]
+    A12[(未来概念对象<br/>前沿感念对象)]
     A2[(遗忘概念对象)]
   end
   
-  A2 -.- B2
+  
   subgraph 映像概念
-    B2((遗忘概念映像))
+    B21[/新获概念映像/]
+    B22((遗忘概念映像))
   end
   
-  subgraph 概念标记号_多语种
-    B2 -.- CD1(遗忘概念标记号)
+  subgraph 映像概念标记
+    CD2[/新创概念标记/]
+    CD1(遗忘概念标记号)
   end
+  
+  B22 -.- CD1
+  A2 -.- B22
+  A12 --> B21  
+  B21 --> CD2
 ```
 
 
@@ -206,7 +213,7 @@ title: "概念对象的类型"
   'theme':'base', 
   'themeVariables': 
     {  
-      'fontSize': '30px', 
+      'fontSize': '22px', 
       'graticuleOpacity':'22',
       'cScale3': '#238E23',
       'cScale2': '#0000FF',
