@@ -121,13 +121,13 @@ myst_enable_extensions = [
 
 # conf.py
 
-extensions = [
-    'myst_parser',
-    'sphinxcontrib.mermaid',
-]
+#extensions = [
+#    'myst_parser',
+#    'sphinxcontrib.mermaid',
+#]
 
 ## 确保 MyST 将 mermaid 代码块视为指令
-myst_fence_as_directive = ["mermaid"]
+#myst_fence_as_directive = ["mermaid"]
 
 # html_static_path = ['_static']
 
