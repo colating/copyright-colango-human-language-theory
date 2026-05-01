@@ -30,9 +30,14 @@ block
   class Frontend front
   class Backend,Database back
 
+### 有些图：才有效？？
+    %% 定义样式类
+    classDef myStyle fill:#f9f,stroke:#333,stroke-width:4px,color:white,font-size:50px;
+    
+    %% 应用样式类
+    class A1 myStyle;
 
-
-
+###
 block
 columns 1
   db(("DB"))
