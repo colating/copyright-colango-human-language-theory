@@ -4,3 +4,4 @@ sphinxcontrib-mermaid
 linkify-it-py
 jieba
 sphinxcontrib-bibtex
+sphinx_design
