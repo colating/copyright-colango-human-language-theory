@@ -335,9 +335,11 @@ subgraph 已知型概念对象
 
 
 
-::::{grid} 1 2 
- 
+::::{grid} 2 
+:gutter: 2
+
 :::{grid-item}
+:columns: 12 6 6 6
 
 ```{mermaid}
 
@@ -369,6 +371,7 @@ flowchart BT
 :::
  
 :::{grid-item}
+:columns: 12 6 6 6
 
 ```{mermaid}
 
