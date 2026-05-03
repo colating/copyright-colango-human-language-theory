@@ -1,6 +1,7 @@
 # 思想收集目录
 
 ```
+   ```{eval-rst}
 .. toctree::
    :glob:
    :maxdepth: 2
@@ -9,6 +10,8 @@
    /中文目录/*
    /en-dir/*
 ```
+
+
 
 ```{eval-rst}
 .. toctree::
