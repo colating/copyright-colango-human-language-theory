@@ -5,11 +5,25 @@
 [todo 常用命令]</tools/extension/template/stodo-usage>
 
 
+## 中文目录、带空格文件名测试
+
+```{eval-rst}
+.. toctree::
+   :glob:
+   :maxdepth: 2
+   :caption: 中文目录、带空格文件名测试
+
+   /tmp-test-md-write/*
+```
+
 /* [tmp-test](tmp-test) */
 
 [xmd](xmd)
 
 [xrst](xrst)
+
+
+
 
 
 
