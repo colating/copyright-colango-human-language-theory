@@ -1,8 +1,8 @@
 # COLANGO COPYRIGHT LICENSE / CLGO 版权与许可
 
-权限：Free    @ v2604-0.002-3
+本页权限：Free    # v2604-0.002-4
 
-Colango 语言文字理论 & 语文智慧学
+Colango 语言文字理论 & 语文智慧学  @COPYRIGHT
 
 - 这属于创造类著作，由许可要求。  
 - `Colango` 也可书写为`colango` ，或简写为 `CLGO`，`clgo`，或 `Clgo`。
