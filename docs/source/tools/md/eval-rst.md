@@ -14,6 +14,14 @@ A reference from inside: :ref:`rst-fun-fish`
 A reference from outside: :ref:`syntax/guide/parsing`
 ```
 
+```<无空格>{eval-rst}
+.. < 1个空格>figure:: ./fun-fish.png
+  :width: 100px
+  :name: rst-fun-fish
+
+< 3个空格> dir/index  ##这里一定要 3个空格！！！！！！
+```
+
 
 ## 两列显示
 
